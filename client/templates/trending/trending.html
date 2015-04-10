@@ -1,0 +1,36 @@
+<template name="trending">
+
+  <header class="bar bar-header bar-positive">
+    <div class="buttons">
+      <button class="button button-clear pull-left button-light" data-ion-modal="search">
+      {{> ionIcon icon='ios-search'}}
+    </button>
+    </div>
+    <h1 class="title">Trending</h1>
+    <div class="buttons">
+      {{#if currentUser}}
+        {{> loginButtons align="right"}}
+        <button class="button button-clear pull-right button-light" data-ion-modal="newProduct">
+        {{> ionIcon icon='ios-plus-empty'}}
+        </button> 
+      {{else}}  
+        <button class="button button-clear pull-right button-light" data-ion-modal="signIn">
+          {{> ionIcon icon='ios-plus-empty'}}
+        </button> 
+      {{/if}}
+    </div>
+  </header>
+
+   
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#each products}}
+          {{> _productItem product=this path="products.show"}}
+        {{/each}}
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

@@ -1,0 +1,54 @@
+<template name="signIn">
+  {{#ionModal title=""}}
+
+    <div class="padding text-center sign-in-modal">
+      <p>
+        Reel Hoopers Logo
+        <!--<img src="/favicon-160x160.png" width=80 height=80 />-->
+        <br>
+        <br>
+        <br>
+        <strong>Hey! Please sign in to do that :)</strong>
+      </p>
+
+      <p>
+        <button data-action="sign-in-instagram" class="button button-positive sign-in-button">
+          
+          <!--<img src="/images/atmosphere-icon.png" width=25 height=25 />-->Instagram
+        </button>
+
+        <button data-action="sign-in-facebook" class="button button-positive sign-in-button">Facebook</button>
+
+        <button data-action="sign-in-twitter" class="button button-positive sign-in-button">Twitter</button>
+
+        <button data-action="sign-in-google" class="button button-positive sign-in-button">Google</button>
+      </p>
+    </div>
+
+  {{/ionModal}}
+</template>
+
+
+<template name="signInSuccess">
+  {{#ionModal title=""}}
+
+    <div class="padding text-center sign-in-modal">
+      <p>
+        Reel Hoopers Logo
+        <!--<img src="/favicon-160x160.png" width=80 height=80 />-->
+        <br>
+        <br>
+        <br>
+        <strong>Thanks for signing in!</strong>
+      </p>
+
+      <p>
+        <button data-action="closeSignInSuccess" class="button button-positive sign-in-button">
+          <!--<img src="/images/atmosphere-icon.png" width=25 height=25 />-->Watch some some videos!
+        </button>
+      </p>
+    </div>
+
+  {{/ionModal}}
+</template>
+
