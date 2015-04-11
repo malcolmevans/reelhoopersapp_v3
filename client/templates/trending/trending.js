@@ -17,5 +17,12 @@ Template.trending.rendered = function () {
 Template.trending.helpers({
   products: function () {
     return Products.find({}, {sort: {numberOfVotes: -1, createdAt: -1}});
+  },
+  isAdminUser: function() {
+    return Roles.userIsInRole(Meteor.user(), ['admin']);
   }
+});
+
+Accounts.ui.config({
+passwordSignupFields: "USERNAME_ONLY"
 });

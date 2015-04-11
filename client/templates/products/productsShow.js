@@ -22,7 +22,28 @@ Template.productsShow.helpers({
 
   comments: function () {
     return Comments.find({productId: Router.current().params._id}, {sort: {createdAt: -1}});
-  }
+  },
+  onError: function () {
+    return function (error) { alert("BOO!"); console.log(error); };
+  },
+  onSuccess: function () {
+    return function (result) { 
+      alert("YAY!"); 
+      console.log(result); 
+      Router.go('trending');
+    };
+  },
+  beforeRemove: function () {
+    return function (collection, id) {
+      var doc = collection.findOne(id);
+      if (confirm('Really delete "' + doc.name + '"?')) {
+        this.remove();
+      }
+    };
+  },
+  isAdminUser: function() {
+    return Roles.userIsInRole(Meteor.user(), ['admin']);
+  }  
 });
 
 /*Template.productsShow.events({

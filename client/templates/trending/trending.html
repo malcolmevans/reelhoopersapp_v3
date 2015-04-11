@@ -8,16 +8,21 @@
     </div>
     <h1 class="title">Trending</h1>
     <div class="buttons">
+    
       {{#if currentUser}}
-        {{> loginButtons align="right"}}
-        <button class="button button-clear pull-right button-light" data-ion-modal="newProduct">
-        {{> ionIcon icon='ios-plus-empty'}}
-        </button> 
-      {{else}}  
+      
+      {{else}}
         <button class="button button-clear pull-right button-light" data-ion-modal="signIn">
           {{> ionIcon icon='ios-plus-empty'}}
         </button> 
       {{/if}}
+
+      {{#if isAdminUser}}
+        {{> loginButtons align="right"}}
+        <button class="button button-clear pull-right button-light" data-ion-modal="newProduct">
+        {{> ionIcon icon='ios-plus-empty'}}
+        </button> 
+      {{/if}}  
     </div>
   </header>
 

@@ -32,6 +32,12 @@
             <p>
               {{>oembed}}
             </p>
+            {{#if isAdminUser}}
+              {{> quickRemoveButton collection="Products" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="button button-assertive"}}
+            {{else}}
+            {{/if}}
+              
+              
             {{#with author}}
               <p>
                 <small>via <a href="{{pathFor 'users.show'}}" class="dark">{{profile.name}}</a></small>
